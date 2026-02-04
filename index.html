@@ -1,230 +1,340 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio</title>
+  <title>Sai Krishna Arthanari | AI Engineer</title>
+
+  <!-- ===== SEO / ATS ===== -->
+  <meta name="description" content="AI Engineer and Software Developer specializing in RAG, machine learning, cloud infrastructure, and scalable AI systems." />
+  <meta name="keywords" content="AI Engineer, Machine Learning, RAG, Cloud Engineer, Python, PyTorch, Azure, AWS, Software Developer" />
+
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fb;
-      color: #222;
+    /* =====================
+       DESIGN SYSTEM
+    ====================== */
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --muted: #64748b;
+      --border: #e5e7eb;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
+
+    [data-theme="dark"] {
+      --bg: #0b1220;
+      --card-bg: #0f172a;
+      --primary: #e5e7eb;
+      --accent: #60a5fa;
+      --muted: #94a3b8;
+      --border: #1e293b;
+      --shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    /* =====================
+       HEADER
+    ====================== */
     header {
-      background: #0f172a;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      padding: 72px 20px 64px;
       text-align: center;
     }
+
     header h1 {
+      font-size: 2.6rem;
       margin: 0;
-      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
+
     header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
+      margin-top: 14px;
+      font-size: 1.15rem;
       opacity: 0.9;
     }
+
+    #theme-toggle {
+      margin-top: 28px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* =====================
+       LAYOUT
+    ====================== */
     section {
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 1000px;
+      margin: 64px auto;
       padding: 0 20px;
     }
+
     h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-      color: #0f172a;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
     }
+
+    h3 { margin-top: 0; }
+
+    p { color: var(--muted); }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    /* =====================
+       CARDS
+    ====================== */
     .card {
-      background: white;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    /* =====================
+       BADGES
+    ====================== */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* =====================
+       PROJECT IMAGES
+    ====================== */
+    .project-img {
+      width: 100%;
       border-radius: 10px;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+    }
+
+    /* =====================
+       GRIDS
+    ====================== */
+    .skills-grid,
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .cert {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
+      background: #fafafa;
     }
-    ul {
-      padding-left: 20px;
-    }
-    .projects .card h3 {
-      margin-top: 0;
-    }
+
+    /* =====================
+       LINKS
+    ====================== */
     a {
-      color: #2563eb;
+      color: var(--accent);
       text-decoration: none;
       font-weight: 500;
     }
-    a:hover {
-      text-decoration: underline;
+
+    a:hover { text-decoration: underline; }
+
+    /* =====================
+       ANIMATIONS
+    ====================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
     footer {
-      text-align: center;
-      padding: 20px;
       background: #e5e7eb;
+      text-align: center;
+      padding: 24px;
       font-size: 0.9rem;
+      color: #475569;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Sai Krishna Arthanari</h1>
-  <p>AI Engineer (Primary) | Software Developer (Secondary) | Entry-Level / New Grad</p>
+  <p>AI Engineer · Software Developer · Entry-Level / New Grad</p>
+  <button id="theme-toggle" aria-label="Toggle dark mode">🌙 Toggle Dark Mode</button>
 </header>
 
-<section>
+<section class="reveal">
   <h2>About Me</h2>
   <div class="card">
     <p>
-      I am an entry-level AI Engineer and Software Developer with industry experience in cloud platforms and backend systems. I have worked on scalable cloud infrastructure, automation, and full-stack applications, and I actively build AI-powered systems including retrieval-augmented generation (RAG) pipelines and data-driven machine learning workflows.
+      Entry-level AI Engineer and Software Developer with hands-on experience in
+      retrieval-augmented generation (RAG), machine learning pipelines, and cloud-based systems.
+      Strong background in Python, distributed systems, and production-ready AI deployments.
     </p>
   </div>
 </section>
 
-<section>
+<section class="reveal">
   <h2>Skills</h2>
-  <div class="card">
-    <ul>
-      <li><strong>Programming:</strong> Python, Java, JavaScript, C++, SQL, Linux Shell</li>
-      <li><strong>AI & Data:</strong> Machine Learning, Deep Learning, NLP, RAG, Model Evaluation</li>
-      <li><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-learn, Apache Spark</li>
-      <li><strong>Web & Backend:</strong> React, Node.js, Express, REST APIs</li>
-      <li><strong>Cloud & DevOps:</strong> AWS, Azure, Docker, Kubernetes, CI/CD, Terraform</li>
-      <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, FAISS</li>
-    </ul>
+  <div class="skills-grid">
+    <div class="card"><strong>Programming</strong><br>Python, Java, JavaScript, C++, SQL</div>
+    <div class="card"><strong>AI & ML</strong><br>Machine Learning, Deep Learning, NLP, RAG</div>
+    <div class="card"><strong>Frameworks</strong><br>PyTorch, TensorFlow, Scikit-learn, Spark</div>
+    <div class="card"><strong>Cloud</strong><br>AWS, Azure, Docker, Kubernetes, CI/CD</div>
   </div>
 </section>
 
-<section class="projects">
-  <p style="margin-bottom:20px;">These projects emphasize end-to-end AI engineering: data pipelines, model development, evaluation, deployment considerations, and system-level thinking.</p>
-  <!-- Projects emphasize both AI and Software Engineering -->
-  <h2>AI Engineering Projects (Primary Focus)</h2>
+<section class="reveal">
+  <h2>AI Engineering Projects</h2>
 
-  <div class="card">
-    <h3>Generative AI Engineering - (RAG, LangGraph, Vector Databases) Dec- 2025</h3>
+  <div class="card reveal">
+    <h3>Generative AI Engineering – RAG & Multi-Agent Systems</h3>
+    <img src="project-rag.png" alt="RAG system architecture" class="project-img" />
     <ul>
-      <li>Built advanced RAG pipelines with hybrid search, multimodal retrieval, persistent memory, with accurate and efficient data retrieval.</li>
-      <li>Designed multi-agent and autonomous RAG systems using LangGraph, integrated LangSmith for monitoring and optimization, and
-leveraged vector databases (FAISS, Pinecone, Weaviate) to build domain-specific knowledge chatbots and multimodal AI assistants</li>
-      <li>Visualized attention weights for clinical interpretability</li>
+      <li>Built hybrid and multimodal RAG pipelines using vector databases.</li>
+      <li>Designed autonomous agents with LangGraph and memory persistence.</li>
+      <li>Integrated monitoring and evaluation for reliability.</li>
     </ul>
-    <p><strong>Improvements:</strong> Compared results with transformer-based temporal models.</p>
-    <a href="#">GitHub Repo</a>
+    <div class="badges">
+      <span class="badge">Python</span>
+      <span class="badge">RAG</span>
+      <span class="badge">FAISS</span>
+      <span class="badge">LangGraph</span>
+    </div>
+    <p><a href="#">GitHub Repository</a></p>
   </div>
 
-  <div class="card">
-    <h3> Big Data & Machine Learning Pipeline – PySpark, Apache Spark, MLlib, Python, NLP (TF-IDF) , Random Forest, K-Means Aug-2025</h3>
-   
+  <div class="card reveal">
+    <h3>Big Data & ML Pipeline – PySpark</h3>
+    <img src="project-spark.png" alt="Spark ML pipeline" class="project-img" />
     <ul>
-      <li>Built an end-to-end PySpark big-data and ML pipeline on 1.3M+ LinkedIn job postings, processing large-scale text, skills, and job metadata
-using distributed Spark workflows and MLlib.<li>
-      <li>Implemented production-scale ML models including Random Forest regression, multiclass classification, K-Means clustering, and TF-IDF–
-based NLP recommendations for job demand prediction, talent profiling, and role matching.</li>
-      
+      <li>Processed 1.3M+ job postings using distributed Spark workflows.</li>
+      <li>Implemented Random Forest, K-Means, and TF-IDF NLP models.</li>
     </ul>
-    <p><strong>Improvements:</strong> Investigated bias and uncertainty training, did EDA along with using ML modelas like K-means clustering, NLP, Logistic regression </p>
-    <a href="#">GitHub Repo</a>
-  </div>
-
-  <div class="card">
-    <h3>Clinical Question Answering System (AI + Backend)</h3>
-    <p>
-      Evaluated large language models on clinical question-answering tasks to assess medical knowledge and reliability.
-    </p>
-    <ul>
-      <li>Benchmarked LLM responses against curated medical datasets</li>
-      <li>Analyzed hallucinations and factual errors</li>
-      <li>Implemented retrieval-augmented generation (RAG)</li>
-    </ul>
-    <p><strong>Improvements:</strong> Improved factual grounding using external medical sources.</p>
-    <a href="#">GitHub Repo</a>
+    <div class="badges">
+      <span class="badge">PySpark</span>
+      <span class="badge">MLlib</span>
+      <span class="badge">NLP</span>
+      <span class="badge">Big Data</span>
+    </div>
+    <p><a href="#">GitHub Repository</a></p>
   </div>
 </section>
 
-<section>
-  <h2>AI & Software Engineering Experience</h2>
+<section class="reveal">
+  <h2>Experience</h2>
   <div class="card">
-    <h3>Junior Cloud Engineer — CDW, Chennai, India</h3>
+    <h3>Junior Cloud Engineer — CDW</h3>
     <p><em>Sept 2023 – Aug 2025</em></p>
     <ul>
-      <li>Designed and automated cloud onboarding workflows on Azure using Power Automate, reducing deployment time by ~99% and enabling scalable provisioning.</li>
-      <li>Led hybrid cloud migrations from on‑prem infrastructure to Azure and AWS with zero data loss and minimal downtime.</li>
-      <li>Hardened and validated production systems for security and compliance, supporting reliable deployment of data‑driven and AI‑enabled workloads.</li>
-      <li>Resolved cloud networking, application deployment, cost optimization, and security issues while meeting strict SLA requirements.</li>
-    </ul>
-
-    <h3>Cloud Engineer Intern — CDW, Chennai, India</h3>
-    <p><em>Jan 2023 – Jul 2023</em></p>
-    <ul>
-      <li>Built strong foundations in cloud computing, networking, and security through hands‑on production support.</li>
-      <li>Worked with Azure VMs, storage, and identity services, supporting scalable backend systems.</li>
-      <li>Applied automation and monitoring practices relevant to deploying and maintaining AI pipelines.</li>
+      <li>Automated Azure onboarding workflows reducing deployment time by ~99%.</li>
+      <li>Led hybrid cloud migrations to Azure and AWS.</li>
+      <li>Supported secure deployment of AI-enabled workloads.</li>
     </ul>
   </div>
 </section>
 
-<section>
-<h2>Certifications & Achievements</h2>
-<div class="card" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
-
-
-<div style="border:1px solid #e5e7eb; border-radius:12px; padding:16px; text-align:center;">
-<h4>Azure Fundamentals</h4>
-<p style="font-size:0.9rem; color:#555;">AZ-900</p>
-<p style="font-size:0.85rem;">Cloud fundamentals, services, security</p>
-</div>
-
-
-<div style="border:1px solid #e5e7eb; border-radius:12px; padding:16px; text-align:center;">
-<h4>Azure AI Fundamentals</h4>
-<p style="font-size:0.9rem; color:#555;">AI-900</p>
-<p style="font-size:0.85rem;">AI workloads, ML & NLP basics</p>
-</div>
-
-
-<div style="border:1px solid #e5e7eb; border-radius:12px; padding:16px; text-align:center;">
-<h4>Fortinet NSE 2 & 3</h4>
-<p style="font-size:0.9rem; color:#555;">Network Security</p>
-<p style="font-size:0.85rem;">Firewalls, threat protection</p>
-</div>
-
-
-<div style="border:1px solid #e5e7eb; border-radius:12px; padding:16px; text-align:center;">
-<h4>Security Training</h4>
-<p style="font-size:0.9rem; color:#555;">DoD CUI & ICS</p>
-<p style="font-size:0.85rem;">Secure systems & compliance</p>
-</div>
-
-
-<div style="border:1px solid #e5e7eb; border-radius:12px; padding:16px; text-align:center;">
-<h4>Hackathon Finalist</h4>
-<p style="font-size:0.9rem; color:#555;">Microsoft & SIH</p>
-<p style="font-size:0.85rem;">Applied problem-solving</p>
-</div>
-
-
-</div>
+<section class="reveal">
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert"><h4>Azure Fundamentals</h4><p>AZ-900</p></div>
+    <div class="cert"><h4>Azure AI Fundamentals</h4><p>AI-900</p></div>
+    <div class="cert"><h4>Fortinet NSE 2 & 3</h4><p>Network Security</p></div>
+  </div>
 </section>
-<section>
+
+<section class="reveal">
   <h2>Resume & Links</h2>
   <div class="card">
     <p><a href="#">Download Resume (PDF)</a></p>
     <p>
-      <a href="https://github.com/saikarthickgit">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/saikrishna-sarthana/">LinkedIn</a> | 
-      <a href="arthanarisaikrishna@gmail.com">Email</a>
+      <a href="https://github.com/saikarthickgit">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/saikrishna-sarthana/">LinkedIn</a> ·
+      <a href="mailto:arthanarisaikrishna@gmail.com">Email</a>
     </p>
   </div>
 </section>
 
 <footer>
-  © 2026 Your Name | Personal Portfolio
+  © 2026 Sai Krishna Arthanari · AI Engineer Portfolio
 </footer>
+
+<!-- =====================
+     SCRIPTS
+====================== -->
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme) {
+    root.setAttribute("data-theme", storedTheme);
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    root.setAttribute("data-theme", "dark");
+  }
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
-
-
