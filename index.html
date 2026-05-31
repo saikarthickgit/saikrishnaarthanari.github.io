@@ -1,340 +1,697 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sai Krishna Arthanari | AI Engineer</title>
-
-  <!-- ===== SEO / ATS ===== -->
-  <meta name="description" content="AI Engineer and Software Developer specializing in RAG, machine learning, cloud infrastructure, and scalable AI systems." />
-  <meta name="keywords" content="AI Engineer, Machine Learning, RAG, Cloud Engineer, Python, PyTorch, Azure, AWS, Software Developer" />
-
-  <style>
-    /* =====================
-       DESIGN SYSTEM
-    ====================== */
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --primary: #0f172a;
-      --accent: #2563eb;
-      --muted: #64748b;
-      --border: #e5e7eb;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b1220;
-      --card-bg: #0f172a;
-      --primary: #e5e7eb;
-      --accent: #60a5fa;
-      --muted: #94a3b8;
-      --border: #1e293b;
-      --shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--primary);
-      line-height: 1.6;
-    }
-
-    /* =====================
-       HEADER
-    ====================== */
-    header {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #fff;
-      padding: 72px 20px 64px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    header p {
-      margin-top: 14px;
-      font-size: 1.15rem;
-      opacity: 0.9;
-    }
-
-    #theme-toggle {
-      margin-top: 28px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.3);
-      background: transparent;
-      color: white;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    /* =====================
-       LAYOUT
-    ====================== */
-    section {
-      max-width: 1000px;
-      margin: 64px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 24px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-    }
-
-    h3 { margin-top: 0; }
-
-    p { color: var(--muted); }
-
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-
-    /* =====================
-       CARDS
-    ====================== */
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    /* =====================
-       BADGES
-    ====================== */
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .badge {
-      background: rgba(37, 99, 235, 0.1);
-      color: var(--accent);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    /* =====================
-       PROJECT IMAGES
-    ====================== */
-    .project-img {
-      width: 100%;
-      border-radius: 10px;
-      margin: 16px 0;
-      border: 1px solid var(--border);
-    }
-
-    /* =====================
-       GRIDS
-    ====================== */
-    .skills-grid,
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .cert {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-align: center;
-      background: #fafafa;
-    }
-
-    /* =====================
-       LINKS
-    ====================== */
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover { text-decoration: underline; }
-
-    /* =====================
-       ANIMATIONS
-    ====================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =====================
-       FOOTER
-    ====================== */
-    footer {
-      background: #e5e7eb;
-      text-align: center;
-      padding: 24px;
-      font-size: 0.9rem;
-      color: #475569;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Sai Krishna Arthanari</h1>
-  <p>AI Engineer · Software Developer · Entry-Level / New Grad</p>
-  <button id="theme-toggle" aria-label="Toggle dark mode">🌙 Toggle Dark Mode</button>
-</header>
-
-<section class="reveal">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      Entry-level AI Engineer and Software Developer with hands-on experience in
-      retrieval-augmented generation (RAG), machine learning pipelines, and cloud-based systems.
-      Strong background in Python, distributed systems, and production-ready AI deployments.
-    </p>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="card"><strong>Programming</strong><br>Python, Java, JavaScript, C++, SQL</div>
-    <div class="card"><strong>AI & ML</strong><br>Machine Learning, Deep Learning, NLP, RAG</div>
-    <div class="card"><strong>Frameworks</strong><br>PyTorch, TensorFlow, Scikit-learn, Spark</div>
-    <div class="card"><strong>Cloud</strong><br>AWS, Azure, Docker, Kubernetes, CI/CD</div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>AI Engineering Projects</h2>
-
-  <div class="card reveal">
-    <h3>Generative AI Engineering – RAG & Multi-Agent Systems</h3>
-    <img src="project-rag.png" alt="RAG system architecture" class="project-img" />
-    <ul>
-      <li>Built hybrid and multimodal RAG pipelines using vector databases.</li>
-      <li>Designed autonomous agents with LangGraph and memory persistence.</li>
-      <li>Integrated monitoring and evaluation for reliability.</li>
-    </ul>
-    <div class="badges">
-      <span class="badge">Python</span>
-      <span class="badge">RAG</span>
-      <span class="badge">FAISS</span>
-      <span class="badge">LangGraph</span>
-    </div>
-    <p><a href="#">GitHub Repository</a></p>
-  </div>
-
-  <div class="card reveal">
-    <h3>Big Data & ML Pipeline – PySpark</h3>
-    <img src="project-spark.png" alt="Spark ML pipeline" class="project-img" />
-    <ul>
-      <li>Processed 1.3M+ job postings using distributed Spark workflows.</li>
-      <li>Implemented Random Forest, K-Means, and TF-IDF NLP models.</li>
-    </ul>
-    <div class="badges">
-      <span class="badge">PySpark</span>
-      <span class="badge">MLlib</span>
-      <span class="badge">NLP</span>
-      <span class="badge">Big Data</span>
-    </div>
-    <p><a href="#">GitHub Repository</a></p>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Experience</h2>
-  <div class="card">
-    <h3>Junior Cloud Engineer — CDW</h3>
-    <p><em>Sept 2023 – Aug 2025</em></p>
-    <ul>
-      <li>Automated Azure onboarding workflows reducing deployment time by ~99%.</li>
-      <li>Led hybrid cloud migrations to Azure and AWS.</li>
-      <li>Supported secure deployment of AI-enabled workloads.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Certifications</h2>
-  <div class="cert-grid">
-    <div class="cert"><h4>Azure Fundamentals</h4><p>AZ-900</p></div>
-    <div class="cert"><h4>Azure AI Fundamentals</h4><p>AI-900</p></div>
-    <div class="cert"><h4>Fortinet NSE 2 & 3</h4><p>Network Security</p></div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2>Resume & Links</h2>
-  <div class="card">
-    <p><a href="#">Download Resume (PDF)</a></p>
-    <p>
-      <a href="https://github.com/saikarthickgit">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/saikrishna-sarthana/">LinkedIn</a> ·
-      <a href="mailto:arthanarisaikrishna@gmail.com">Email</a>
-    </p>
-  </div>
-</section>
-
-<footer>
-  © 2026 Sai Krishna Arthanari · AI Engineer Portfolio
-</footer>
-
-<!-- =====================
-     SCRIPTS
-====================== -->
-<script>
-  const root = document.documentElement;
-  const toggle = document.getElementById("theme-toggle");
-
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme) {
-    root.setAttribute("data-theme", storedTheme);
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    root.setAttribute("data-theme", "dark");
-  }
-
-  toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  });
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Krishna Arthanari | ML Engineer & Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      });
-    },
-    { threshold: 0.15 }
-  );
 
-  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-</script>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1f2e 100%);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            margin-top: 80px;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-content {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+        }
+
+        .timeline-item strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--accent) 0%, rgba(59, 130, 246, 0.5) 100%);
+            padding: 2rem;
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent);
+        }
+
+        .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #60a5fa;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            #hero {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">SK</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Sai Krishna Arthanari</h1>
+            <p>ML Engineer | Data Scientist | Cloud Engineer</p>
+            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem;">Passionate about building scalable AI solutions and unlocking insights from data</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Crafting Intelligence at Scale</h3>
+                    <p>I'm a data-driven ML engineer currently pursuing a Master's in Computer Science at the University at Buffalo. With hands-on experience in cloud engineering, generative AI, and machine learning, I transform complex problems into elegant solutions.</p>
+                    <p>My journey spans from cloud infrastructure at CDW to cutting-edge AI research, developing systems that learn, adapt, and deliver real impact.</p>
+
+                    <h3 style="margin-top: 2rem;">Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div>
+                                <strong>Research Volunteer, University at Buffalo</strong>
+                                <span style="color: var(--text-muted); font-size: 0.9rem;">Building RAG systems & Job Intelligence Pipelines</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div>
+                                <strong>Cloud Engineering Intern, CDW</strong>
+                                <span style="color: var(--text-muted); font-size: 0.9rem;">AWS • GCP • Infrastructure</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div>
+                                <strong>Master's Student, SUNY Buffalo</strong>
+                                <span style="color: var(--text-muted); font-size: 0.9rem;">Aug 2025 - Dec 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: var(--secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); height: fit-content;">
+                    <h3 style="color: var(--accent); margin-bottom: 1.5rem;">Quick Facts</h3>
+                    <div style="space: 1.5rem;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong style="color: var(--accent);">Education</strong><br>
+                            <span style="color: var(--text-muted);">MS Computer Science<br>SUNY Buffalo</span>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong style="color: var(--accent);">Specialization</strong><br>
+                            <span style="color: var(--text-muted);">ML • Generative AI<br>Data Science • Cloud</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--accent);">Based In</strong><br>
+                            <span style="color: var(--text-muted);">Buffalo, NY, USA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>ML & AI</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">RAG Systems</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Analytics</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Django</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Vector DBs</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>RAG System with LLMs</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Built a comprehensive Retrieval-Augmented Generation system leveraging advanced LLMs to create intelligent, context-aware responses from custom knowledge bases.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LLMs</span>
+                            <span class="tech-badge">Vector DB</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Job Market Intelligence Pipeline</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Data pipeline analyzing job market trends using web scraping, NLP, and machine learning to provide actionable insights on employment patterns and skill demand.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Data Pipeline</span>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Resume Matcher</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Intelligent resume analysis tool using ML to match candidates with job descriptions, leveraging semantic similarity and skill extraction algorithms.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">ML</span>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">FastAPI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Video Transcripts Creator</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Automated video transcription and analysis system that processes multimedia content and generates searchable transcripts with timestamps and metadata.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Speech Recognition</span>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">Jupyter</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Algorithm Study Collection</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Comprehensive collection of algorithmic solutions and implementations learned during master's program coursework, showcasing problem-solving expertise.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">Algorithms</span>
+                            <span class="tech-badge">Data Structures</span>
+                            <span class="tech-badge">LeetCode</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit/Leetcode-java">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Cloud Infrastructure Projects</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Production-grade cloud solutions built on AWS and GCP, demonstrating expertise in scalable infrastructure, containerization, and DevOps practices.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">AWS</span>
+                            <span class="tech-badge">GCP</span>
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Kubernetes</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/saikarthickgit">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Open to collaborations, opportunities, and meaningful conversations about AI, ML, and technology.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:arthanarisaikrishna@gmail.com">arthanarisaikrishna@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/saikarthickgit" target="_blank">github.com/saikarthickgit</a>
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn</strong>
+                    <a href="https://linkedin.com/in/saikrishna" target="_blank">linkedin.com/in/saikrishna</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sai Krishna Arthanari. All rights reserved. | Built with passion for technology</p>
+    </footer>
 </body>
 </html>
